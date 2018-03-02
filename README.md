@@ -100,4 +100,34 @@
     ***
 - ConcurrentHashMap 的工作原理及代码实现<br/>
     [ConcurrentHashMap总结](http://www.importnew.com/22007.html)
+    ***
 
+### 线程
+- 创建线程的方式及实现<br/>
+    1）继承Thread类创建线程<br/>
+    2）实现Runnable接口创建线程<br/>
+    3）使用Callable和Future创建线程<br/>
+    ***
+- sleep() 、join（）、yield（）有什么区别<br/>
+    1、___sleep()___ 方法<br/>
+    在指定的毫秒数内让当前正在执行的线程休眠（暂停执行），此操作受到系统计时器和调度程序精度和准确性的影响。 让其他线程有机会继续执行，但它并不释放对象锁。也就是如果有Synchronized同步块，其他线程仍然不同访问共享数据。注意该方法要捕获异常 
+    比如有两个线程同时执行(没有Synchronized)，一个线程优先级为MAX_PRIORITY，另一个为MIN_PRIORITY，如果没有Sleep()方法，只有高优先级的线程执行完成后，低优先级的线程才能执行；但当高优先级的线程sleep(5000)后，低优先级就有机会执行了。
+    总之，sleep()可以使低优先级的线程得到执行的机会，当然也可以让同优先级、高优先级的线程有执行的机会。<br/>
+    2、___yield()___ 方法<br/>
+    暂停当前正在执行的线程对象，并执行其他线程。
+    yield()应该做的是让当前运行线程回到可运行状态，以允许具有相同优先级的其他线程获得运行机会。但是，实际中无法保证yield()达到让步目的，因为让步的线程还有可能被线程调度程序再次选中。
+    yield()从未导致线程转到等待/睡眠/阻塞状态。在大多数情况下，yield()将导致线程从运行状态转到可运行状态，但有可能没有效果。<br/>
+    3、___join()___ 方法<br/>
+    Thread的非静态方法join()让一个线程B“加入”到另外一个线程A的尾部。在A执行完毕之前，B不能工作。
+        Thread t = new MyThread();
+        t.start();
+        t.join();
+    保证当前线程停止执行，直到该线程所加入的线程完成为止。然而，如果它加入的线程没有存活，则当前线程不需要停止。
+    ***
+- [说说 CountDownLatch / CyclicBarrier / Semaphore原理](http://www.importnew.com/21889.html)
+- 说说 Exchanger 原理
+- 说说 CountDownLatch 与 CyclicBarrier 区别
+- ThreadLocal 原理分析
+- 讲讲线程池的实现原理
+- 线程池的几种方式
+- 线程的生命周期
