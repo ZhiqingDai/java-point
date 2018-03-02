@@ -13,43 +13,43 @@
 
     ___多态___：多态是指允许不同类的对象对同一消息做出响应.多态性包括参数化多态性和包含多态性<br/>
     __动态链接__：对于父类中定义的方法,如果子类中重写了该方法,那么父类类型的引用将调用子类中的这个方法,这就是动态链接.
-***
+    ***
 - final, finally, finalize 的区别<br/>
     __final__：用于类，方法，变量前，用来表示该关键字修饰的类(不能被其他类继承)，方法(不能被覆盖，但是可以被重载)，变量(值就不能被修改)具有不可变的特性<br/>
     __finally__：配合try语句使用，不管try块中的代码有没有抛出异常终止，finally语句块中的代码必然会执行<br/>
     __finalize__：来源于Object中的方法,用于回收资源。finalize方法将在垃圾回收器清除对象之前调用,可以用于某些对象的回收监控，但是不要依赖使用该方法回收任何短缺的资源，这是因为很难知道这个方法什么时候被调用，完全看GC心情
-***
+    ***
 - int 和 Integer 有什么区别<br/>
     __int__是JAVA原始类型，Integer是JAVA对原始类型的一种包装类型。可以这么看，当初JAVA认为万事万物兼对象，JAVA5之后将这些基本数据类型当成对象操作。
-***
+    ***
 - 重载和重写的区别<br/>
     你有从你爸那里继承来一套别墅，别墅以前你爸规定只住你们一家人，但是现在你拿到了，至于里面住人、住狗或者其他随你便，这就叫 __重载__ ;<br/>
     突然有一天，你觉得别墅大门太少了，所以你又凿出了几个门；或者你脑袋抽风，说干脆把门堵了不让人出去了。或者你干脆把房子炸了，你在原地再造一个。但是地名还是那块地名，你没法变。这些就是 __重写__
-***
+    ***
 
 - 抽象类和接口有什么区别<br/>
     ___相同的___：都是上层的抽象层；不能被实例化；包含抽象的方法但不比提供具体的实现<br/>
     ___区别的___：抽象类中可以写非抽象的方法;类只能单继承extends，接口可以多实现implements
-***
+    ***
 - 说说反射的用途及实现<br/>
     ___JAVA反射___ 机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制;<br/>
     功能： 在运行时判断任意一个对象所属的类；在运行时构造任意一个类的对象；在运行时判断任意一个类所具有的成员变量和方法；在运行时调用任意一个对象的方法；生成动态代理
-***
+    ***
 - 说说自定义注解的场景及实现<br/>
    记住几个元注解：@Retention、@Target、@Inherited、@Documented）
     要真将这个注解，使用场景和实现太多了,例如：数据库表关系映射ORM、Android中一些框架提供的用注解来简化findViewById写法，等等。网上很多博客可以看看,可以看看这个[自定义注解示例，利用反射进行解析](http://www.importnew.com/14479.html)
-***
+    ***
 - HTTP 请求的 GET 与 POST 方式的区别<br/>
-GET的语义是请求获取指定的资源。GET方法是安全、幂等、可缓存的（除非有 Cache-ControlHeader的约束）,GET方法的报文主体没有任何语义。POST的语义是根据请求负荷（报文主体）对指定的资源做出处理，具体的处理方式视资源类型而不同。POST不安全，不幂等，（大部分实现）不可缓存。为了针对其不可缓存性，有一系列的方法来进行优化，以后有机会再研究（FLAG已经立起）。
-[但是这里有干货](http://mp.weixin.qq.com/s?__biz=MzI3NzIzMzg3Mw==&mid=100000054&idx=1&sn=71f6c214f3833d9ca20b9f7dcd9d33e4#rd)
-***
+    GET的语义是请求获取指定的资源。GET方法是安全、幂等、可缓存的（除非有 Cache-ControlHeader的约束）,GET方法的报文主体没有任何语义。POST的语义是根据请求负荷（报文主体）对指定的资源做出处理，具体的处理方式视资源类型而不同。POST不安全，不幂等，（大部分实现）不可缓存。为了针对其不可缓存性，有一系列的方法来进行优化，以后有机会再研究（FLAG已经立起）。
+    [但是这里有干货](http://mp.weixin.qq.com/s?__biz=MzI3NzIzMzg3Mw==&mid=100000054&idx=1&sn=71f6c214f3833d9ca20b9f7dcd9d33e4#rd)
+    ***
 - session 与 cookie 区别<br/>
     ___Session___ 是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中；<br/>
     ___Cookie___ 是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现Session的一种方式。
-***
+    ***
 - session 分布式处理<br/>
     [分布式Session的一致性问题](https://www.cnblogs.com/study-everyday/p/7853145.html)
-***
+    ***
 - JDBC 流程<br/>
     1、加载JDBC驱动程序<br/>
     2、提供JDBC连接的URL<br/>
@@ -57,22 +57,47 @@ GET的语义是请求获取指定的资源。GET方法是安全、幂等、可�
     4、创建一个Statement<br/>
     5、执行SQL语句<br/>
     6、处理返回结果<br/>
-***
+    ***
 - MVC 设计思想<br/>
     经典课题:Model View Controller（ 模型-视图-控制器）设计创建 Web 应用程序的模式
-***
+    ***
 - equals 与 == 的区别<br/>
     Java 语言里的 equals方法其实是交给开发者去覆写的，让开发者自己去定义满足什么条件的两个Object是equal的。“==”操作符单存比较两个对象在JVM虚拟机中分配的地址 。
-***
+    ***
 
 ### 集合
-- List 和 Set 区别
-- List 和 Map 区别
-- Arraylist 与 LinkedList 区别
-- ArrayList 与 Vector 区别
-- HashMap 和 Hashtable 的区别
-- HashSet 和 HashMap 区别
-- HashMap 和 ConcurrentHashMap 的区别
-- HashMap 的工作原理及代码实现
-- ConcurrentHashMap 的工作原理及代码实现
+![Collection集合体系继承树](image/collection.png)
+![Map体系继承树](image/map.png)
+- List 和 Set 区别<br/>
+    __List,Set__ 都是继承自 __Collection__ 接口<br/>
+    __List特点__：元素有放入顺序，元素可重复 ;__Set特点__：元素无放入顺序，元素不可重复(注意：元素虽然无放入顺序，但是元素在set中的位置是有该元素的HashCode决定的，其位置其实是固定的)<br/>
+    __List__ 接口有三个实现类：__LinkedList，ArrayList，Vector__;<br/>
+    __Set__ 接口有两个实现类：__HashSet__(底层由HashMap实现)，__LinkedHashSet__
+    ***
+- List 和 Map 区别<br/>
+    ___List___ 是对象集合，允许对象重复
+    ___Map___ 是键值对的集合，不允许key 
+    ***
+- Arraylist 与 LinkedList 区别<br/>
+    [干货在这里](http://blog.csdn.net/eson_15/article/details/51145788)
+    绝对不会让你失望的，对于添加或删除，___LinkedList和ArrayList___ 并不能明确说明谁快谁慢
+    ***
+- ArrayList 与 Vector 区别<br/>
+    1、Vector是线程安全的，ArrayList不是线程安全的。<br/>
+    2、ArrayList在底层数组不够用时在原来的基础上扩展0.5倍，Vector是扩展1倍。<br/>
+    [ArrayList 与 Vector 区别](https://zhuanlan.zhihu.com/p/28241176)
+    ***
+- HashMap 和 Hashtable 的区别<br/>
+    [HashMap 和 Hashtable 的区别](http://www.importnew.com/24822.html)
+    ***
+- HashSet 和 HashMap 区别<br/>
+    [HashSet 和 HashMap 区别](http://www.importnew.com/6931.html)
+    ***
+- HashMap 和 ConcurrentHashMap 的区别<br/>
+    主要区别线程安全的区别<br/>
+    [谈谈HashMap线程不安全的体现](https://my.oschina.net/hosee/blog/673521)
+    [Java中的几个HashMap/ConcurrentHashMap实现分析](http://www.importnew.com/19685.html)
+    ***
+- ConcurrentHashMap 的工作原理及代码实现<br/>
+    [ConcurrentHashMap总结](http://www.importnew.com/22007.html)
 
