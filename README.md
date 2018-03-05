@@ -167,3 +167,16 @@
 
 - 线程的生命周期
     ![线程的生命周期](image/thread.png)
+    ***
+
+### 锁机制
+- [说说线程安全问题](https://www.cnblogs.com/xumanbu/p/4203504.html)
+- [volatile 实现原理](http://www.importnew.com/24082.html)
+- [synchronize 实现原理](http://www.importnew.com/23511.html)
+- [synchronized 与 lock 的区别](http://blog.csdn.net/u012403290/article/details/64910926)
+- [CAS 乐观锁](http://www.hollischuang.com/archives/1537)
+- ABA 问题
+[Java CAS 和ABA问题](https://www.cnblogs.com/549294286/p/3766717.html)
+- 乐观锁的业务场景及实现方式
+
+
