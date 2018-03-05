@@ -180,3 +180,20 @@
 - 乐观锁的业务场景及实现方式
 
 
+## 核心篇
+
+### 数据存储
+- [MySQL 索引使用的注意事项](http://www.jb51.net/article/109467.htm)
+- 说说反模式设计
+- [说说分库与分表设计](http://blog.csdn.net/winy_lm/article/details/50708493)
+- 分库与分表带来的分布式困境与应对之策
+- 说说 SQL 优化之道
+- 为什么要用 B-tree
+- 聚集索引与非聚集索引的区别
+- limit 20000 加载很慢怎么解决
+- 选择合适的分布式主键方案
+- 选择合适的数据存储方案
+- ObjectId 规则
+- 聊聊 MongoDB 使用场景
+- 倒排索引
+- 聊聊 ElasticSearch 使用场景
