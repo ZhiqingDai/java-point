@@ -156,6 +156,14 @@
     
     ***
 - [ThreadLocal 原理分析](http://www.importnew.com/20963.html)
-- 讲讲线程池的实现原理
+- [讲讲线程池的实现原理](http://www.cnblogs.com/dolphin0520/p/3932921.html)
 - 线程池的几种方式
+    具体实现来看，它们实际上也是调用了 __ThreadPoolExecutor__ ，只不过参数都已配置好了。<br/>
+    __newFixedThreadPool__ 创建的线程池corePoolSize和maximumPoolSize值是相等的，它使用的LinkedBlockingQueue；<br/>
+    __newSingleThreadExecutor__ 将corePoolSize和maximumPoolSize都设置为1，也使用的LinkedBlockingQueue；<br/>
+    __newCachedThreadPool__ 将corePoolSize设置为0，将maximumPoolSize设置为Integer.MAX_VALUE，使用的SynchronousQueue，也就是说来了任务就创建线程运行，当线程空闲超过60秒，就销毁线程。<br/>
+　　 实际中，如果Executors提供的三个静态方法能满足要求，就尽量使用它提供的三个方法，因为自己去手动配置ThreadPoolExecutor的参数有点麻烦，要根据实际任务的类型和数量来进行配置。
+    ***
+
 - 线程的生命周期
+    ![线程的生命周期](image/thread.png)
